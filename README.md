@@ -1,98 +1,44 @@
 # Full Stack Budgeting App
 
-Create a backend API using Express that performs full CRUD on a single model, `transactions`. Then, using RESTful routes, connect it to a React app.
+Budgtr is an application where people can log their financial transactions. Building this application will require you to bring together all you've learned about JavaScript, building websites, React, servers and RESTful routes.
 
-![](./assets/index-page.png)
+## Project scoring
 
-![](./assets/new-page.png)
+This project has three different parts on which you will be graded. Each part is weighted differently.
 
-## Overview
+- 70% **Completion**.
+- 20% **Mastery**.
+- 10% **Stretch goals**
 
-- Use Express to build a back-end.
-- Use `create-react-app` to build a front-end.
-- Connect the back-end and the front-end.
-- Deploy both apps so anyone can see them online.
+In total, you must receive at least 70% to complete this project. For example, you you could attain 55% of points from completion, 10% of points through mastery and 5% of the points through stretch goals.
 
-## User Stories, Acceptance Criteria and Code Quality Rubric
+## Completion
 
-You must implement all of the user stories and acceptance criteria below. After those are completed, look at and implement as many of the bonus features as you want to.
+1. Create a GitHub repository for both the front-end and the back-end applications and upload your code to it.
+1. Your front-end repository should have a `readme.md` file with setup instructions for your application.
+1. Both the front-end and back-end applications should be successfully deployed to the web.
+   - Your readme should also include links to your back-end GitHub repository, both of your deployed URLs, and a link to the Trello board you used to manage your work.
 
-Be sure to build this out as a portfolio piece: Something you would be excited to show to a potential employer and be able to talk through the code with them. 
+#### Back-end feature requirements
 
-### User Stories
+To complete the back-end application, you will need to build a RESTful server that performs CRUD actions on a single resource.
 
-You must successfully build a minimum of 6 out of 9 features to pass this project
+4. Your server should incorporate at least one table that, at minimum, includes:
+   - `id` - A unique number for each item
+     - `item_name`- string - the name of the transaction (ie: income, savings, cat food, etc.)
+     - `amount` -number - the amount of the transaction
+     - `date`- string - the date should be a simple string. As a bonus activity, use the date object and date input field and format it to be human-readable
+     - `from` - string - who this transaction was with (ie. employer, bank, pet store, grocery store, etc)
+     - `category` - string - what category does this fall into (income, savings, pets, food, etc)
+1. A route exists to create new resources.
+1. A route exists to read all resources.
+1. A route exists to read a single resource.
+1. A route exists to update a single resource.
+1. A route exists to delete a single resource.
+1. An appropriate "Not Found" response is given when a route is requested that does not match the created routes.
+1. All routes follow RESTful conventions regarding naming and status code responses.
 
-#### (1) Navigation/Nav Bar
-
-- The Nav bar allows me to navigate to the Index and New pages
-
-#### (2) Index Page
-
-- I can see a list of income and expenditures with the date, the transaction name and the amount on the Index page.
-
-- There is also an Account total visible that sums all the different expenditures and shows the user how much money they currently have.
-
-#### (3) New Page
-
-- I can click on a "New" button that takes me to the New page, with a form that lets me create a new transaction.
-
-
-- Once a transaction is created, I am navigated back to the Index page
-
-#### (4) Show Page
-
-- I can see a single expenditure with more details and appropriate navigation links
-
-#### (5) Edit page 
-
-- I can see a form that is pre-filled with an individual expenditure that allows me to update the expenditure. Once updated, I am taken back to the show page where I should be able to see the updated transaction, without needing to refresh the page.
-
-
-- The edit form is accessible either from the Show page or Index page via button/link.
-
-#### (6) Delete functionality
-
-- The expenditure can be deleted. 
-
-- The delete functionality is accessible either from the Show page or Index page via button/link.
-
-#### (7) Account Total
-
- - The account total is visible either on the Index page (this is more straightforward) or in the Nav Bar (this is more challenging). 
-
-- The account CSS changes depending on the amount. The account should show green (or similar color) if the amount is above $1000. There should be neutral/white color between $0 - $1000. And it should show a red (or similar color) if the bank account value falls below $0. 
-
-- The changing color can be text, background, border, as long as it is in/near the account total and provides clarity with what it is showing.
-
-#### (8) UX/UI
-- There is effort to make the app styled. Forms are styled and properly labeled. The navigation is clear and easy to use, a color theme has been chosen and applied. At least one font has been chosen and applied. The app is responsive (readable/usable) across multiple screen sizes/widths.
-
-#### (9) Deployed online
-
-
-- I can visit the application via the internet
-
-
-- Netlify is configured correctly that I can send a link to the New page to someone and it works (does not give a 404)
-
-#### Bonus Feature
-
-- There is implementation of at least one bonus feature beyond what has been taught in class/required in lab/required in the rest of the criteria. 
-
-- This can be a CSS framework, a new NPM package, a chart that shows the data in a new way, working with the date object instead of strings etc. Please confirm with your instructor.
-
-
-### Acceptance Criteria
-
-#### Back-end
-
-For the back-end to be complete, the following must be true:
-
-- The application uses `express`, `dotenv`, `cors`.
-- The application is [deployed](https://github.com/joinpursuit/step-by-step-guides) and can be accessed from your React front-end app and Postman.
-- The application has the following routes and work as described below.
-- The application handles common errors and has any necessary validations
+##### Back-end Example
 
 |  #  | Action  |        URL        | HTTP Verb |    CRUD    |                  Description                   |
 | :-: | :-----: | :---------------: | :-------: | :--------: | :--------------------------------------------: |
@@ -104,77 +50,49 @@ For the back-end to be complete, the following must be true:
 
 > **Note:** All of the above routes should work both with an application like Postman and a front-end framework like React
 
+#### Front-end feature requirements
 
-**Model**
+To complete the front-end application, you will need to build a React application that allows for CRUD operations to be performed on a single resource. You will also need to display the data thoughtfully and clearly.
 
-- There will be one model with at least these components
- - `item_name`- string - the name of the transaction (ie: income, savings, cat food, etc.)
- - `amount`  -number - the amount of the transaction
- - `date`- string - the date should be a simple string. As a bonus activity, use the date object and date input field and format it to be human-readable
- - `from` - string - who this transacton was with (ie. employer, bank, pet store, grocery store, etc)
- - `category` - string - what category does this fall into (income, savings, pets, food, etc) - bonus, make this an options list on the new/edit forms. 
+12. All pages should include the same navigation bar, which includes the name of the application and a button to create a new resource.
+1. You should have an Index page that presents all of the resources in your database table.
+1. After clicking on a single resource, you should be brought to a Show page which includes more detailed information about the specific resource.
+1. When the button in the navigation bar to create a new resource is clicked, you should be brought to a new page that includes a form to create a new resource.
+1. Forms should be properly labeled and the `type` of inputs should be properly set. For example, an input that requires a `number` should have type `number`, not `text`.
+1. When a new resource form is submitted, the resource should be created in the database and the user should be brought to that new resource's Show page.
+1. On the resource's Show page, there should be a button to edit the current resource. When clicked, the user is brought to a form page with data already filled in that can be edited.
+1. When an edited resource form is submitted, the resource should be edited in the database and the user should be brought to that new resource's Show page.
+1. On the resource's Show page, there should be a button to delete the current show page.
+1. Using the resource's data, perform a calculation that can be performed on the front-end application and displayed to the user on the Index page. For example, the bank account total should be visible. In addition to the total, the CSS should change based on the value - use a greenish color if the bank account total is above 100, use a yellowish color if the bank account total is between 0 and 100 and a reddish color if the bank account total is less than 0. You can change the background or text or both.
 
-#### Front-End
+### Mastery rubric
 
-For the front-end to be complete, the following must be true:
+This section of the project is designed to measure your increasing skill at writing good code and following best practices.
 
-1. The application is deployed.
-1. The navigation bar allows the user to switch between the "Index" and "New" pages. Bonus: shows amount total. 
-1. The following is present on the "Index" page:
+To view components of the mastery rubric, view the appropriate assignment on Canvas.
 
-   - The navigation bar.
-   - A list of transactions that have the following properties visible:
-     - `date` - a string, in any format.
-     - `name` - a string, representing the name of the transactions.
-     - `amount` - a number, representing the amount of the expenditure/income.
-     - The bank account total somewhere near the top.
-     - The bank account CSS changes depending on the amount in the bank account
+### Stretch goals
 
-1. The following is present on the "New" page:
-   - The navigation bar.
-   - The url will be `/transactions/new`.
-   - The form to create new transactions, which has four fields.
-     - `date` - a string, in any format.
-     - `name` - a string, the name of the transactions.
-     - `amount` - a number, the amount of the expenditure/income.
-     - `from` - a string, where this expense/income has come from.
-     - `category` - a string. As a bonus, this can be an options menu. 
-  
-1. The following is present on the "Show" page
-     - `date` - a string, in any format.
-     - `name` - a string, the name of the transactions.
-     - `amount` - a number, the amount of the expenditure/income.
-     - `from` - a string, where this expense/income has come from.
-     - `category` - a string`
+This section of the project measures your ability to go above and beyond in creating your project. To score points in this section, you should incorporate a feature, technology, or skill not explicitly required by the project instructions.
 
+When you submit your pull request, _make sure to include a description of any stretch goals you implemented._ You may choose from the list below or come up with features or tasks that are more relevant to your specific implementation of the project.
 
-1. The following is present on the "Edit" page
-   - The navigation bar.
-   - The url will be `/transactions/new`.
-   - The form to create new transactions, which has four fields.
-     - `date` - a string, in any format.
-     - `name` - a string, the name of the transactions.
-     - `amount` - a number, the amount of the expenditure/income.
-     - `from` - a string, where this expense/income has come from.
-     - `category` - a string. As a bonus, this can be an options menu. 
-  
-
-## Deployment
-
-- [Netlify Deployment for create-react-app](./netlify-cra.md)
-
-- [Netlify Set Up Continuous Deployment](https://github.com/joinpursuit/Netlify-CRA-Cont-Deploy-Guide)
-
-- [Deploy Express App](https://github.com/joinpursuit/step-by-step-guides)
-
-## Bonus Ideas:
-
-- Change favicon from default react app.
-- Add some logic/functionality that will make income a positive number and an expenditure a negative number, rather than having the user type it in.
-- Use [react-bootstrap](https://react-bootstrap.github.io) or similar, to help style your app.
-- Show the amount in the nav bar, so it is visible on every view.
-- Use the date object for the date, instead of just a string.
-- Use the input type `date` for the date.
+- Make `categories` a `select` HTML element on the new/edit forms to allow the user to choose from a pull-down menu from the available categories, and allow for the addition of new categories to the options menu.
+- Display the bank account total in the nav bar (or similar component that is visible on all views), instead of just on the index page.
+- Add helpful errors to users when they try to create or edit items with invalid data
+- Use the date object for the date, instead of just a string. Be sure to format it on the front-end to make it human-readable. Try using the `date` input type as well.
+- Use a checkbox, separate input or similar strategy to allow the user to select whether the transaction is a deposit or withdrawal. If it is a withdrawal, make sure the value subtracts and deposit values add. By default, your user would have be entering values that are positive or negative.
+- Create a fake user login, similar to the example given in the official[ React Router GitHub Repository](https://github.com/remix-run/react-router/tree/dev/examples/auth), and allow viewing/updating resources by a user.
 - Add a library like [chartjs](https://www.chartjs.org) or [D3](https://www.chartjs.org) to provide visualizations the budget app.
 
-Be sure to confirm with your instructor which bonus idea you will implement.
+## Project setup and overview
+
+There are no tests for this project and you _should not_ fork and clone this repository. Instead, create your own repositories.
+
+## Example application
+
+The following example application uses "Snacks" as the resource. It uses the nutritional information for snacks to determine whether or not a snack is healthy and displays that as a red heart.
+
+![](./assets/index-page.png)
+
+![](./assets/new-page.png)
