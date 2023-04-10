@@ -90,7 +90,7 @@ There are no tests for this project and you _should not_ fork and clone this rep
 
 ## Example application
 
-The following example application uses "Snacks" as the resource. It uses the nutritional information for snacks to determine whether or not a snack is healthy and displays that as a red heart.
+
 
 ![](./assets/index-page.png)
 
