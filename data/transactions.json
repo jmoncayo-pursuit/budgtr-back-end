@@ -14,5 +14,21 @@
     "date": "2024-07-03",
     "from": "Employer",
     "category": "Income"
+  },
+  {
+    "id": 3,
+    "item_name": "FULL STACK DEV",
+    "amount": "140000",
+    "date": "2024-07-02",
+    "from": "SUNO.COM",
+    "category": "NOICE"
+  },
+  {
+    "item_name": "Rent",
+    "amount": "-3200",
+    "date": "2024-07-03",
+    "from": "Real Estate Company LLC ",
+    "category": "Cost of Living",
+    "id": 4
   }
 ]
