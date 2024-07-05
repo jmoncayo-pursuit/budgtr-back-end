@@ -1,4 +1,4 @@
-// back-end/controllers/transactionsController.js
+// controllers/transactionsController.js
 const express = require('express');
 const transactions = express.Router();
 const {

@@ -15,4 +15,9 @@ app.get('/', (req, res) => {
 // Routes for transactions
 app.use('/transactions', transactionsController);
 
+// Catch-all route for non-existent routes
+app.all('*', (req, res) => {
+  res.status(404).json({ error: 'Not Found' });
+});
+
 module.exports = app;

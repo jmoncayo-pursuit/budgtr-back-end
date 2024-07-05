@@ -1,4 +1,4 @@
-// back-end/models/Transaction.js
+// /models/Transaction.js
 const fs = require('fs');
 const path = require('path');
 const transactionsPath = path.resolve(__dirname, '../data/transactions.json');
@@ -39,6 +39,8 @@ function createTransaction(newTransaction) {
   const nextId =
     transactions.length > 0 ? transactions[transactions.length - 1].id + 1 : 1;
   newTransaction.id = nextId;
+  // Convert string date to Date object
+  newTransaction.date = new Date(newTransaction.date);
   transactions.push(newTransaction);
   writeTransactions(transactions);
   return newTransaction;
@@ -51,6 +53,8 @@ function updateTransaction(updatedTransaction) {
     (transaction) => transaction.id === updatedTransaction.id
   );
   if (index !== -1) {
+    // Convert string date to Date object
+    updatedTransaction.date = new Date(updatedTransaction.date);
     transactions[index] = updatedTransaction;
     writeTransactions(transactions);
     return updatedTransaction;

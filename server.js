@@ -1,4 +1,4 @@
-// back-end/server.js
+//server.js
 const app = require("./app.js");
 
 const dotenv = require("dotenv");
