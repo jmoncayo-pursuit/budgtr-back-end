@@ -7,7 +7,18 @@ const transactionsPath = path.resolve(__dirname, '../data/transactions.json');
 function readTransactions() {
   try {
     const transactionsData = fs.readFileSync(transactionsPath, 'utf8');
-    return JSON.parse(transactionsData);
+    const transactions = JSON.parse(transactionsData);
+
+    // Convert dates to YYYY-MM-DD format
+    transactions.forEach((transaction) => {
+      if (transaction.date.includes('T')) {
+        // Date in ISO 8601 format
+        transaction.date = new Date(transaction.date)
+          .toISOString()
+          .split('T')[0];
+      }
+    });
+    return transactions;
   } catch (error) {
     return [];
   }

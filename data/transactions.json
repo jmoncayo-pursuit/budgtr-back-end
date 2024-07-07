@@ -9,26 +9,42 @@
   },
   {
     "id": 2,
-    "item_name": "Salary",
-    "amount": 3000,
-    "date": "2024-07-03",
-    "from": "Employer",
-    "category": "Income"
+    "item_name": "Grocery Shopping",
+    "amount": "-150",
+    "date": "2024-07-05",
+    "from": "Whole Foods",
+    "category": "Food"
   },
   {
     "id": 3,
-    "item_name": "FULL STACK DEV",
-    "amount": "140000",
-    "date": "2024-07-02",
-    "from": "SUNO.COM",
-    "category": "NOICE"
+    "item_name": "Rent",
+    "amount": "-1800",
+    "date": "2024-07-01",
+    "from": "Landlord",
+    "category": "Rent"
   },
   {
-    "item_name": "Rent",
-    "amount": "-3200",
+    "id": 4,
+    "item_name": "Utilities",
+    "amount": "-250",
     "date": "2024-07-03",
-    "from": "Real Estate Company LLC ",
-    "category": "Cost of Living",
-    "id": 4
+    "from": "Con Edison",
+    "category": "Utilities"
+  },
+  {
+    "id": 5,
+    "item_name": "Movie Tickets",
+    "amount": "-35",
+    "date": "2024-07-06",
+    "from": "AMC Theaters",
+    "category": "Entertainment"
+  },
+  {
+    "id": 6,
+    "item_name": "Savings Deposit",
+    "amount": "504",
+    "date": "2024-07-02T00:00:00.000Z",
+    "from": "Bank",
+    "category": "Newer Category"
   }
 ]
