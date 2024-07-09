@@ -45,6 +45,14 @@
     "amount": "504",
     "date": "2024-07-02T00:00:00.000Z",
     "from": "Bank",
-    "category": "Newer Category"
+    "category": "Savings"
+  },
+  {
+    "item_name": "test",
+    "amount": "-1300",
+    "date": "2024-07-09",
+    "from": "test",
+    "category": "test",
+    "id": 7
   }
 ]
